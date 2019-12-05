@@ -3,6 +3,7 @@
 * Author: Josh McIntyre
 */
 #include <stdio.h>
+#include <stdlib.h>
 #include <calc.h>
 
 // Keysizes to test for real computations
@@ -18,3 +19,6 @@ const double SECONDS_PER_MINUTE = 60.0;
 const double SECONDS_PER_HOUR = 3600.0;
 const double SECONDS_PER_DAY = 86400.0;
 const double SECONDS_PER_YEAR = 31557600.0;
+
+// Function prototypes
+void calculate_and_output(double ops_per_sec);

@@ -88,6 +88,15 @@ double pow_two_double(int exponent)
 	return result;
 }
 
+/* Calculate the time for a single op based on a provided ops/second figure.
+* This will divide one second by the total ops per second to get the single optime
+*/
+double average_optime_from_opssec(double ops_per_sec)
+{
+	double avg_optime = 1.0 / ops_per_sec;
+	return avg_optime;
+}
+
 /* This function calculates the average time for one keypair generation operation
 * (privkey -> pubkey -> base58 encoding), given a data set of iterations and times
 * for multiple keysizes
@@ -100,8 +109,8 @@ double average_optime(int iterations[], double times[], int length)
 		sum_optimes += optime(iterations[i], times[i]);
 	}
 
-	double average_optime = sum_optimes / length;
-	return average_optime;
+	double avg_optime = sum_optimes / length;
+	return avg_optime;
 }
 
 /* Returns the amount of time for one keypair generation operation (privkey -> pubkey -> base58 encoding),
